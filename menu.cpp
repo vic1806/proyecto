@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
 using namespace std;
-//despliegue del menu de ordenamiento de platillos
+//despliegue del menu de ordenamiento de platillo
+int precioPostre;
+int precioBebida;
 int main (){
     int opcion;
     cout << "Bienvenido , Mesa par cuanrto de personas desea ordenar: " << endl;
@@ -21,6 +23,7 @@ int main (){
     cout << "desea agregar algo mas a su platillo principal? " << endl;
     cout << "1. Si" << endl;
     cout << "2. No" << endl;
+    cin >> opcion;
     if (opcion == 1) {
     cout << "===========================" << endl;
     cout << "   MENU PARA ORDENAR       " << endl;
@@ -31,7 +34,10 @@ int main (){
     cout << "4. Pupusas precio: $1.00" << endl;
     cout << "5. Panini de pollo precio: $4.50" << endl;
     }
-  
+    cin >> opcion;
+    cout << "desea agregar algo mas a su platillo principal? " << endl;
+    cout << "1. Si" << endl;
+    cout << "2. No" << endl;
     cin >> opcion;
     if (opcion == 1) {
         cout << "===========================" << endl;
@@ -62,7 +68,7 @@ if (opcion == 1) {
     cout << "cuantas bebidas desea ordenar? " << endl;
     int cantidadBebidas;
     cin >> cantidadBebidas;
-    cantidadBebidas = cantidadBebidas * opcion;
+    cantidadBebidas = cantidadBebidas * precioBebida; // Assuming precioBebida is defined based on the selected bebida
 }       
 cout << "desea agregar algo mas para postre? " << endl;
 cout << "1. Si" << endl;
@@ -80,8 +86,48 @@ if (opcion == 1) {
 cout << "cuantos postres desea ordenar? " << endl;
     int cantidadPostres;
     cin >> cantidadPostres;
-    cantidadPostres = cantidadPostres * opcion;
+    cantidadPostres = cantidadPostres * precioPostre; // Assuming precioPostre is defined based on the selected postre
+}
+cout << "desea modificar su orden? " << endl;
+cout << "1. Si" << endl;
+cout << "2. No" << endl;
+cin >> opcion;
+cout << "desea ver su factura? " << endl;
+cout << "1. Si" << endl;
+cout << "2. No" << endl;
+cin >> opcion;
 
+cout << "Desea ver su factura y pagar la cuenta? " << endl;
+    cout << "1. Si" << endl;
+    cout << "2. No" << endl;
+    cin >> opcion;
+    if (opcion == 1) {
+        cout << "Generando factura..." << endl;
+        cout << "===========================" << endl;
+        cout << "Factura" << endl;
+        cout << "===========================" << endl;
+        cout << "Mesa para " << mesa << " personas" << endl;
+        cout << "Platillo principal: " << endl;
+        cout << "Acompañamientos: " << endl;
+        cout << "Bebidas: " << endl;
+        cout << "Postres: " << endl;
+        cout << "Total a pagar: $" << endl;
+        cout << "Desea pagar con tarjeta o efectivo? " << endl;
+        cout << "1. Tarjeta" << endl;
+        cout << "2. Efectivo" << endl;
+        if (opcion == 1) {
+            cout << "Procesando pago con tarjeta..." << endl;
+            cout << "Pago realizado con exito. ¡Gracias por su compra!" << endl;
+        } else if (opcion == 2) {
+            cout << "Procesando pago en efectivo..." << endl;
+            cout << "Pago realizado con exito. ¡Gracias por su compra!" << endl;
+        } else {
+            cout << "Opcion no valida. No se realizo el pago." << endl;
+        }
+        // Aquí irá la lógica para generar y mostrar la factura
+    } else {
+        cout << "Gracias por su visita. ¡Hasta luego!" << endl;
+    }
 
     return 0;
 }
